@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel='stylesheet' href='layout.css' />
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
   <title>Frontend Mentor | Sunnyside agency landing page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,7 +19,35 @@
   </style>
 </head>
 <body>
-  About
+  
+  <header>
+    <nav>
+      <div class='navSection'>
+        <div class='navHeader' >
+          <a href='#'><img src='/images/logo.svg' alt='Sunny Logo' class='logo' /></a>
+          <button class='toggleBtn'><i class='fas fa-bars' ></i></button>
+        </div>
+        <ul class='links'>
+          <li><a href=#About>About</a></li>
+          <li><a href=#Services>Services</a></li> 
+          <li><a href=#Projects>Projects</a></li> 
+           <li><button class='contactBtn btn'>CONTACT</button></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class='headerMid'> 
+      <h1>We are creatives</h1>
+      <img src='/images/icon-arrow-down.svg' alt='Arrow pointing down' />
+    </section>
+  </header>
+  <article class='content'>
+    
+  </article>
+  
+
+
+  <!-- About
   Services
   Projects
   Contact
@@ -58,11 +90,12 @@
   About
   Services
   Projects
-  Contact
+  Contact -->
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Hector D</a>.
   </div>
+  <script scr='app.js'></script>
 </body>
 </html>

@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Fraunces&display=swap");
+/* Primary colors */
+/* Neutral colors */
+/* Body font size */
+/* Font families and weights */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+}
+
+.links {
+  list-style-type: none;
+}
+
+.links a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-family: "Barlow";
+  letter-spacing: 1px;
+  font-size: 1rem;
+  text-shadow: 0 0 1.5px #25564b;
+}
+
+.contactBtn {
+  height: 50px;
+  width: 130px;
+  border-radius: 30px;
+  color: black;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: "Fraunces";
+  cursor: pointer;
+  background-color: white;
+}
+
+.headerMid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.headerMid h1 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  word-spacing: 0.5rem;
+  font-family: "Fraunces";
+  font-weight: bold;
+  font-size: 4rem;
+  margin: 6.8rem;
+  text-align: center;
+  text-shadow: 0 0 1.5px #25564b;
+}
+
+.headerMid img {
+  height: auto;
+}
+
+header {
+  background-image: url(./images/desktop/image-header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.navSection {
+  height: 12vh;
+}
+
+@media screen and (min-width: 1024px) {
+  .logo {
+    width: 150px;
+  }
+  .navSection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem;
+  }
+  .navHeader {
+    padding: 1rem;
+  }
+  .toggleBtn {
+    display: none;
+  }
+  .links {
+    width: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 2rem;
+  }
+}
+/*# sourceMappingURL=layout.css.map */

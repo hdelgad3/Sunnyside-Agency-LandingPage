@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Fraunces&display=swap');
+
+/* Primary colors */
+$primary-soft-red: hsl(7, 99%, 70%);
+$primary-yellow:   hsl(51, 100%, 49%);
+$primary-dark-desaturated-cyan: hsl(167, 40%, 24%);    
+$primary-dark-blue: hsl(198, 62%, 26%);
+$primary-moderate-cyan: hsl(168, 34%, 41%);
+
+/* Neutral colors */
+$neutral--very-dark-blue: hsl(212, 27%, 19%);
+$neutral-very-dark-greyish-blue: hsl(213,9%,39%);
+$neutral-dark-greyish-blue: hsl(232,10%,55%);
+$neutral-greyish-blue: hsl(210,4%, 67%);
+$neutral-white: hsl(0,0%,100%);
+
+/* Body font size */
+$body-font-size: 18px;
+
+/* Font families and weights */
+$barlow-font: 'Barlow';
+$weight-600: 600;
+$fraunces-font: 'Fraunces';
+$weight-700: 700;
+$weight-900: 900;
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@mixin bgImage($url){
+    background-image: url(#{$url});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+body{
+    background-color: $neutral-white;
+}
+.links{
+    list-style-type: none;
+    a{
+        display: block;  
+        text-decoration: none;
+        color: $neutral-white;
+        font-weight: $weight-600;
+        font-family: $barlow-font;
+        letter-spacing: 1px;
+        font-size: 1rem;
+        text-shadow: 0 0 1.5px $primary-dark-desaturated-cyan;
+    }
+}
+.contactBtn{
+    height: 50px;
+    width: 130px;
+    border-radius: 30px;
+    color: black;
+    border:none;
+    font-weight: $weight-700;
+    font-size: 1.1rem;
+    font-family: $fraunces-font;
+    cursor: pointer;
+    background-color: white;
+}
+.headerMid{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+        color: $neutral-white;
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        word-spacing: 0.5rem;
+        font-family: $fraunces-font;
+        font-weight: bold;
+        font-size: 4rem;
+        margin: 6.8rem;
+        text-align: center;
+        text-shadow: 0 0 1.5px $primary-dark-desaturated-cyan;
+    }
+    img{
+        height: auto;
+    }
+}
+
+// HEADER PORTION
+header{
+    @include bgImage('./images/desktop/image-header.jpg');
+    height:100vh;
+}
+.navSection{
+    height: 12vh;
+}
+
+// HEADER PORTION
+@media screen and (min-width: 1024px) {
+    .logo{
+        width: 150px;
+    }
+    .navSection{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:1rem;
+    }
+    .navHeader{
+        padding: 1rem;
+    }
+    .toggleBtn{
+        display: none;
+    }
+    .links{
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+    }
+}

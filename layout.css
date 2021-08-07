@@ -84,9 +84,6 @@ body {
   .container2 {
     width: 512px;
   }
-  .container3 {
-    width: 512px;
-  }
   header {
     background-image: url(./images/desktop/image-header.jpg);
     background-repeat: no-repeat;
@@ -135,9 +132,9 @@ body {
     display: block;
     min-width: 1024;
     max-width: auto;
-    height: 150vh;
+    height: 213vh;
   }
-  .textBox-row1, .textBox-row2 {
+  .textBox-row1, .textBox-row2, .textBox-row3 {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 50% 50%;
@@ -210,6 +207,49 @@ body {
   }
   .cup {
     background-image: url(./images/desktop/image-stand-out.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .cherry, .orange {
+    background-image: url(./images/desktop/image-graphic-design.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cherry h3, .orange h3 {
+    font-family: "Fraunces";
+    font-weight: 900;
+    font-size: 2rem;
+    color: #25564b;
+  }
+  .cherry p, .orange p {
+    margin-top: 35px;
+    font-family: "Barlow";
+    font-size: 18px;
+    font-weight: 700;
+    color: #19536b;
+  }
+  .cherryText, .orangeText {
+    width: 400px;
+    margin-top: 400px;
+    text-align: center;
+  }
+  .orange {
+    background-image: url(./images/desktop/image-photography.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

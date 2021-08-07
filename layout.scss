@@ -91,7 +91,7 @@ body{
 
 
 @media screen and (min-width: 1024px) {
-    @for $x from 1 through 3{
+    @for $x from 1 through 2{
         .container#{$x} {width:512px}
     }
     // HEADER PORTION
@@ -130,7 +130,7 @@ body{
        display:block;
        min-width: 1024;
        max-width: auto;
-       height: 150vh;
+       height: 213vh;
     }
     .textBox-row1{
         display:grid;
@@ -155,9 +155,7 @@ body{
             font-family: $barlow-font;
             color:$neutral-dark-greyish-blue;
             font-size: $body-font-size;
-            margin: 2rem;
-            
-            
+            margin: 2rem;    
         }
         a{
             font-family: $fraunces-font;
@@ -195,6 +193,41 @@ body{
     .cup{
         @include bgImage('./images/desktop/image-stand-out.jpg')
     }
-    
+
+    .textBox-row3{
+        @extend .textBox-row1
+    }
+    .cherry{
+        @include bgImage('./images/desktop/image-graphic-design.jpg');
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h3{
+            font-family: $fraunces-font;
+            font-weight: $weight-900;
+            font-size: 2rem;
+            color: $primary-dark-desaturated-cyan;
+        }
+        p{
+            margin-top: 35px;
+            font-family: $barlow-font;
+            font-size: $body-font-size;
+            font-weight: $weight-700;
+            color: $primary-dark-blue;
+        }
+    }
+    .cherryText{
+        width:400px;
+        margin-top: 400px;
+        text-align: center;
+    }
+    .orange{
+        @include bgImage('./images/desktop/image-photography.jpg');
+        @extend .cherry;
+    }
+    .orangeText{
+        @extend .cherryText;
+    }
 }
 

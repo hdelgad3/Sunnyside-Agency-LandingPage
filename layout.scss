@@ -88,17 +88,20 @@ body{
     }
 }
 
-// HEADER PORTION
-header{
-    @include bgImage('./images/desktop/image-header.jpg');
-    height:100vh;
-}
-.navSection{
-    height: 12vh;
+.content{
+    display: grid;
 }
 
-// HEADER PORTION
+
 @media screen and (min-width: 1024px) {
+    // HEADER PORTION
+    header{
+        @include bgImage('./images/desktop/image-header.jpg');
+        height:100vh;
+    }
+    .navSection{
+        height: 12vh;
+    }
     .logo{
         width: 150px;
     }
@@ -121,4 +124,24 @@ header{
         justify-content: space-between;
         padding: 2rem;
     }
+    
+    // Main content
+    .content{
+        
+    }
+    .topRow{
+        display:flex;
+    }
+    .textSquareOne{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: start;
+    }
+    .egg{
+        width:auto;
+    }
+
 }
+

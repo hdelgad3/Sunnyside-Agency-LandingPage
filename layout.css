@@ -77,19 +77,22 @@ body {
   height: auto;
 }
 
-header {
-  background-image: url(./images/desktop/image-header.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
-
-.navSection {
-  height: 12vh;
+.content {
+  display: -ms-grid;
+  display: grid;
 }
 
 @media screen and (min-width: 1024px) {
+  header {
+    background-image: url(./images/desktop/image-header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+  .navSection {
+    height: 12vh;
+  }
   .logo {
     width: 150px;
   }
@@ -123,6 +126,30 @@ header {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding: 2rem;
+  }
+  .topRow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .textSquareOne {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: start;
+  }
+  .egg {
+    width: auto;
   }
 }
 /*# sourceMappingURL=layout.css.map */

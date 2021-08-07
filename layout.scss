@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Fraunces&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
 
 /* Primary colors */
 $primary-soft-red: hsl(7, 99%, 70%);
@@ -88,12 +88,12 @@ body{
     }
 }
 
-.content{
-    display: grid;
-}
 
 
 @media screen and (min-width: 1024px) {
+    @for $x from 1 through 3{
+        .container#{$x} {width:512px}
+    }
     // HEADER PORTION
     header{
         @include bgImage('./images/desktop/image-header.jpg');
@@ -126,22 +126,75 @@ body{
     }
     
     // Main content
-    .content{
-        
+    .textBox{
+       display:block;
+       min-width: 1024;
+       max-width: auto;
+       height: 150vh;
     }
-    .topRow{
+    .textBox-row1{
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 700px;
+    }
+    .textSquare1{
         display:flex;
-    }
-    .textSquareOne{
-        display: flex;
-        align-items: center;
+        width:auto;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
-        text-align: start;
+        h3{
+            font-family: $fraunces-font;
+            font-size:2.5rem;
+            font-weight: $weight-900;
+            margin: 2rem;
+        }
+        p{
+            line-height: 2rem;
+            font-size: 1rem;
+            font-family: $barlow-font;
+            color:$neutral-dark-greyish-blue;
+            font-size: $body-font-size;
+            margin: 2rem;
+            
+            
+        }
+        a{
+            font-family: $fraunces-font;
+            font-size:1rem;
+            text-decoration-color: hsl(51, 100%, 83%);
+            text-decoration-thickness: 8px;
+            text-underline-offset: 0rem;
+            text-transform: uppercase;
+            font-weight: $weight-900;
+            letter-spacing: 1px;
+            margin: 2rem;
+        }
+        a:visited{
+            color:#000000;
+        }
+        a:hover{
+            text-decoration-color: $primary-yellow;
+        }
     }
     .egg{
-        width:auto;
+        @include bgImage('./images/desktop/image-transform.jpg');
     }
-
+    .textBox-row2{
+        @extend .textBox-row1;
+    }
+    .textSquare2{
+        @extend .textSquare1;
+        a{
+            text-decoration-color: hsl(5, 100%, 95%);
+        }
+        a:hover{
+            text-decoration-color: $primary-soft-red;
+        }
+    }
+    .cup{
+        @include bgImage('./images/desktop/image-stand-out.jpg')
+    }
+    
 }
 

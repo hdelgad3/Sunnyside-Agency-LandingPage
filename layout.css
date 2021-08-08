@@ -46,9 +46,7 @@ body {
   }
   .navSection .links {
     list-style-type: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -74,8 +72,7 @@ body {
     font-family: "Barlow";
     letter-spacing: 1px;
     font-size: 1.1rem;
-    text-shadow: 0 0 1.5px #25564b;
-    margin: 1rem;
+    margin: 1.5rem;
   }
   .navSection .links .contactBtn {
     background-color: #fad400;
@@ -233,13 +230,16 @@ body {
             justify-content: space-between;
     padding: 2rem;
   }
+}
+
+@media screen and (min-width: 1024px) {
   .textBox {
     display: block;
     min-width: 1024;
     max-width: auto;
     height: auto;
   }
-  .textBox-row1, .textBox-row2, .textBox-row3 {
+  .textBox-row1 {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 50% 50%;
@@ -247,7 +247,7 @@ body {
     -ms-grid-rows: 700px;
         grid-template-rows: 700px;
   }
-  .textSquare1, .textSquare2 {
+  .textSquare1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -263,13 +263,13 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .textSquare1 h3, .textSquare2 h3 {
+  .textSquare1 h3 {
     font-family: "Fraunces";
     font-size: 2.5rem;
     font-weight: 900;
     margin: 2rem;
   }
-  .textSquare1 p, .textSquare2 p {
+  .textSquare1 p {
     line-height: 2rem;
     font-size: 1rem;
     font-family: "Barlow";
@@ -277,7 +277,7 @@ body {
     font-size: 18px;
     margin: 2rem;
   }
-  .textSquare1 a, .textSquare2 a {
+  .textSquare1 a {
     font-family: "Fraunces";
     font-size: 1rem;
     -webkit-text-decoration-color: #fff2a8;
@@ -289,10 +289,10 @@ body {
     letter-spacing: 1px;
     margin: 2rem;
   }
-  .textSquare1 a:visited, .textSquare2 a:visited {
+  .textSquare1 a:visited {
     color: #000000;
   }
-  .textSquare1 a:hover, .textSquare2 a:hover {
+  .textSquare1 a:hover {
     -webkit-text-decoration-color: #fad400;
             text-decoration-color: #fad400;
   }
@@ -302,9 +302,58 @@ body {
     background-size: cover;
     background-position: center;
   }
+  .textBox-row2 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 700px;
+        grid-template-rows: 700px;
+  }
+  .textSquare2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .textSquare2 h3 {
+    font-family: "Fraunces";
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 2rem;
+  }
+  .textSquare2 p {
+    line-height: 2rem;
+    font-size: 1rem;
+    font-family: "Barlow";
+    color: #818498;
+    font-size: 18px;
+    margin: 2rem;
+  }
   .textSquare2 a {
+    font-family: "Fraunces";
+    font-size: 1rem;
     -webkit-text-decoration-color: #ffe8e6;
             text-decoration-color: #ffe8e6;
+    text-decoration-thickness: 8px;
+    text-underline-offset: 0rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 2rem;
+  }
+  .textSquare2 a:visited {
+    color: #000000;
   }
   .textSquare2 a:hover {
     -webkit-text-decoration-color: #fe7867;
@@ -316,7 +365,15 @@ body {
     background-size: cover;
     background-position: center;
   }
-  .cherry, .orange {
+  .textBox-row3 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 700px;
+        grid-template-rows: 700px;
+  }
+  .cherry {
     background-image: url(./images/desktop/image-graphic-design.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -335,20 +392,20 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .cherry h3, .orange h3 {
+  .cherry h3 {
     font-family: "Fraunces";
     font-weight: 900;
     font-size: 2rem;
     color: #25564b;
   }
-  .cherry p, .orange p {
+  .cherry p {
     margin-top: 35px;
     font-family: "Barlow";
     font-size: 18px;
     font-weight: 700;
     color: #19536b;
   }
-  .cherryText, .orangeText {
+  .cherryText {
     width: 400px;
     margin-top: 400px;
     text-align: center;
@@ -358,6 +415,37 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .orange h3 {
+    font-family: "Fraunces";
+    font-weight: 900;
+    font-size: 2rem;
+    color: #25564b;
+  }
+  .orange p {
+    margin-top: 35px;
+    font-family: "Barlow";
+    font-size: 18px;
+    font-weight: 700;
+    color: #19536b;
+  }
+  .orangeText {
+    width: 400px;
+    margin-top: 400px;
+    text-align: center;
   }
   .clientT {
     display: -ms-grid;

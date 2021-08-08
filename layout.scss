@@ -18,10 +18,10 @@ body{
 @media screen and (max-width: 1023px){
     header{
         @include bgImage('./images/mobile/image-header.jpg');
-        height:100vh;
+        height:80vh;
     }
     .navSection{
-            height:15vh;        
+            height:150px;        
             
         .navHeader{
             padding:2rem;
@@ -42,18 +42,39 @@ body{
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height:60px;
+            width:75%;
+            height:300px;
+            position: absolute;
+            overflow: hidden;
+            left:12%;
+            background-color: $neutral-white;
+
             a{
-                
                 display: block;  
                 text-decoration: none;
                 color: $neutral-greyish-blue;
                 font-weight: $weight-600;
                 font-family: $barlow-font;
                 letter-spacing: 1px;
-                font-size: 1rem;
+                font-size: 1.1rem;
                 text-shadow: 0 0 1.5px $primary-dark-desaturated-cyan;
+                margin:1rem;
             }
+            .contactBtn{
+                background-color: $primary-yellow;
+                color:black;
+                font-weight: $weight-700;
+                font-size: 1.1rem;
+                font-family: $fraunces-font;
+                cursor: pointer;
+                height: 50px;
+                width: 130px;
+                border-radius: 30px;
+                border:none;
+            }
+        }
+        .show-links{
+            display:flex;
         }
     }
     .headerMid{
@@ -65,7 +86,7 @@ body{
         h1{
             color: $neutral-white;
             text-transform: uppercase;
-            letter-spacing: 2.9px;
+            letter-spacing: 2px;
             word-spacing: 0.5rem;
             font-family: $fraunces-font;
             font-weight: $weight-900;
@@ -80,6 +101,7 @@ body{
     }
 }
 
+// DESKTOP VIEW
 @media screen and (min-width: 1024px) {
 
     .links{

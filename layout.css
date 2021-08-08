@@ -22,10 +22,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 80vh;
   }
   .navSection {
-    height: 15vh;
+    height: 150px;
   }
   .navSection .navHeader {
     padding: 2rem;
@@ -59,7 +59,12 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 60px;
+    width: 75%;
+    height: 300px;
+    position: absolute;
+    overflow: hidden;
+    left: 12%;
+    background-color: white;
   }
   .navSection .links a {
     display: block;
@@ -68,8 +73,26 @@ body {
     font-weight: 600;
     font-family: "Barlow";
     letter-spacing: 1px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-shadow: 0 0 1.5px #25564b;
+    margin: 1rem;
+  }
+  .navSection .links .contactBtn {
+    background-color: #fad400;
+    color: black;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: "Fraunces";
+    cursor: pointer;
+    height: 50px;
+    width: 130px;
+    border-radius: 30px;
+    border: none;
+  }
+  .navSection .show-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .headerMid {
     display: -webkit-box;
@@ -90,7 +113,7 @@ body {
   .headerMid h1 {
     color: white;
     text-transform: uppercase;
-    letter-spacing: 2.9px;
+    letter-spacing: 2px;
     word-spacing: 0.5rem;
     font-family: "Fraunces";
     font-weight: 900;

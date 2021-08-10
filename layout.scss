@@ -350,6 +350,93 @@ body{
             @include formatGraphicPicText(250px, 250px);
         }
      }
+
+     h2{
+        font-family: $fraunces-font;
+        color: $neutral-greyish-blue;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        padding-left: 30px;
+        text-align: center;
+        padding-top: 80px;
+        font-size:1rem;
+    }
+     .clientT{
+         display:flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         height:auto;
+         div{
+             display:flex;
+         }
+
+         div{
+             display:flex;
+             justify-content: center;
+             align-items: center;
+             flex-direction: column
+         }
+         p{
+             line-height: 2rem;
+             font-size: clamp(1rem,1vw,3rem);
+             font-family: $barlow-font;
+             color:$neutral-very-dark-greyish-blue;
+             font-size: $body-font-size;
+             margin: 1rem;    
+             text-align: center;
+             width: 300px;
+             @media screen and (device-width:280px){
+                 width: 275px;
+             }
+         }
+         h5{
+             font-family: $fraunces-font;
+             font-size: $body-font-size;
+             font-weight: $weight-900;
+             margin-bottom: 10px;
+             margin-top: 5px;
+         }
+         h6{
+             font-family: $barlow-font;
+             font-size: 1rem;
+             color:$neutral-greyish-blue;
+         }
+     }
+     @for $x from 1 through 3{
+         .client#{$x} {
+             text-align:center;
+             margin:50px;
+         }
+         .p#{$x}{
+             border-radius: 50%;
+             width:80px;  
+         }
+     }
+
+
+     
+     .pictures{
+         height:40vh;
+         display:grid;
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr 1fr;
+         width: minmax(280px, 540px);
+         @include mobileFourPic(); 
+     }
+ 
+     .bottomLinks{
+         @include formatBottomLinks(250px, 2rem, 320px, 220px);
+         @media screen and (device-width:280px){
+            @include formatBottomLinks(250px, 2rem, 270px, 200px);
+        }
+         height: 280px;
+     }
+     .attribution{
+         background-color: #90D4C5;
+         font-family: $barlow-font;
+         font-size: 3rem;
+     }
 }
 
 //***********Mobile view for Ipad only!!!!

@@ -446,6 +446,282 @@ body {
   }
 }
 
+@media screen and (max-width: 540px) {
+  h2 {
+    font-family: "Fraunces";
+    color: #a7abae;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding-left: 30px;
+    text-align: center;
+    padding-top: 80px;
+    font-size: 1rem;
+  }
+  .clientT {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  .clientT div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .clientT div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .clientT p {
+    line-height: 2rem;
+    font-size: clamp(1rem, 1vw, 3rem);
+    font-family: "Barlow";
+    color: #5a636c;
+    font-size: 18px;
+    margin: 1rem;
+    text-align: center;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 540px) and (device-width: 280px) {
+  .clientT p {
+    width: 275px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .clientT h5 {
+    font-family: "Fraunces";
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+  .clientT h6 {
+    font-family: "Barlow";
+    font-size: 1rem;
+    color: #a7abae;
+  }
+  .client1 {
+    text-align: center;
+    margin: 50px;
+  }
+  .p1 {
+    border-radius: 50%;
+    width: 80px;
+  }
+  .client2 {
+    text-align: center;
+    margin: 50px;
+  }
+  .p2 {
+    border-radius: 50%;
+    width: 80px;
+  }
+  .client3 {
+    text-align: center;
+    margin: 50px;
+  }
+  .p3 {
+    border-radius: 50%;
+    width: 80px;
+  }
+  .pictures {
+    height: 40vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    width: minmax(280px, 540px);
+  }
+  .pictures .pic1 {
+    background-image: url(./images/mobile/image-gallery-milkbottles.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .pictures .pic2 {
+    background-image: url(./images/mobile/image-gallery-orange.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .pictures .pic3 {
+    background-image: url(./images/mobile/image-gallery-cone.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .pictures .pic4 {
+    background-image: url(./images/mobile/image-gallery-sugar-cubes.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .bottomLinks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 250px;
+    background-color: #90D4C5;
+    height: 280px;
+  }
+  .bottomLinks .bottomLogo {
+    fill: #458c7e;
+    height: 2rem;
+  }
+  .bottomLinks .bottomA {
+    list-style-type: none;
+    width: 320px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 2rem;
+  }
+  .bottomLinks .bottomA a {
+    display: block;
+    text-decoration: none;
+    color: #458c7e;
+    font-family: "Barlow";
+    font-size: 1rem;
+  }
+  .bottomLinks .bottomB {
+    list-style-type: none;
+    width: 220px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 2rem;
+  }
+  .bottomLinks .bottomB a {
+    display: block;
+    text-decoration: none;
+    color: #458c7e;
+    font-family: "Barlow";
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 540px) and (device-width: 280px) {
+  .bottomLinks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 250px;
+    background-color: #90D4C5;
+  }
+  .bottomLinks .bottomLogo {
+    fill: #458c7e;
+    height: 2rem;
+  }
+  .bottomLinks .bottomA {
+    list-style-type: none;
+    width: 270px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 2rem;
+  }
+  .bottomLinks .bottomA a {
+    display: block;
+    text-decoration: none;
+    color: #458c7e;
+    font-family: "Barlow";
+    font-size: 1rem;
+  }
+  .bottomLinks .bottomB {
+    list-style-type: none;
+    width: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 2rem;
+  }
+  .bottomLinks .bottomB a {
+    display: block;
+    text-decoration: none;
+    color: #458c7e;
+    font-family: "Barlow";
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .attribution {
+    background-color: #90D4C5;
+    font-family: "Barlow";
+    font-size: 3rem;
+  }
+}
+
 @media screen and (device-width: 768px) {
   .textBox {
     display: block;

@@ -16,8 +16,6 @@ This is a solution to the [Sunnyside agency landing page challenge on Frontend M
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -29,20 +27,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![LandingPage](./design/own-sunnyside-landingpage.JPG)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [SunnySide-LandingPage](https://sunnyside-landingpage-hector.netlify.app/)
 
 ## My process
 
@@ -53,61 +43,108 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- SCSS
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+I learned alot this project. I wrote alot of redundant code that could of been reduced if I implemented the mobile design first. I also tried this project with Sass. I noticed a great benefit to using Sass. The mixins made life easier. After deploying my code to a server, I realized that I forgot to accomodate my code for all web browsers. For example, in Safari the icons for external websites like Twitter do not work. These are few examples of what I learned. 
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<header>
+    <nav>
+      <div class='navSection'>
+        <div class='navHeader' >
+          <a href='#'><img src='/images/logo.svg' alt='Sunny Logo' class='logo' /></a>
+          <button class='toggleBtn'><img src='/images/icon-hamburger.svg'/></button>
+        </div>
+        <ul class='links'>
+          <li><a href=#About>About</a></li>
+          <li><a href=#Services>Services</a></li> 
+          <li><a href=#Projects>Projects</a></li> 
+           <li><button class='contactBtn btn'>CONTACT</button></li>
+        </ul>
+      </div>
+    </nav>
 ```
+I practiced Semantic HTML as seen above. 
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+```SCSS
+@mixin formatBottomLinks($bodyHeight, $logoHeight, 
+                        $bottomAWidth, $bottomBWidth){
+    display:flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         height:$bodyHeight;
+         background-color: #90D4C5;
+         .bottomLogo{
+             fill: $primary-moderate-cyan;
+             height: $logoHeight;
+         }
+         .bottomA{
+             list-style-type: none;
+             width: $bottomAWidth;
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             padding: 2rem;
+             a{
+                 display: block;  
+                 text-decoration: none;
+                 color: $primary-moderate-cyan;
+                 font-family: $barlow-font;
+                 font-size: 1rem;
+             }
+         }
+         .bottomB{
+            list-style-type: none;
+            width: $bottomBWidth;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            a{
+                display: block;  
+                text-decoration: none;
+                color: $primary-moderate-cyan;
+                font-family: $barlow-font;
+                font-size: 1rem;
+            }
+         }
 }
 ```
 
+The mixin above was used to formot bottom links. 
+
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+toggleBtn.addEventListener('click', ()=>{
+    if(links.classList.contains('show-links')){
+        links.classList.remove('show-links');
+    }
+    else{
+        links.classList.add('show-links');
+    }
+});
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Simple javascript to toggle menu. There were two ways of toggling the menu. One way was manually like the code above or by using the .toggle() method.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I plan on working on more Front End developer projects. I want to get stronger as Javascript and eventually try REACT. 
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Sass Resource](https://sass-lang.com/guide) - This Sass resourse helped me implement Sass into this project.
+- [Viewport Units Resource](https://www.sitepoint.com/css-viewport-units-quick-start/) - This helped me get better at using viewport units to size objects.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@hdelgad3](https://www.frontendmentor.io/profile/hdelgad3)
+- Twitter - [@Irllydo](https://twitter.com/Irllydo)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+I'd like to acknowledge StackOverFlow for helping me make a div corner sharper. 
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

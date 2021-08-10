@@ -10,18 +10,160 @@
   padding: 0;
   box-sizing: border-box;
 }
+@mixin formatBoxRow($col, $row){
+    display:grid;
+    grid-template-columns: $col;
+    grid-template-rows: $row;
+}
+@mixin formatTextSquare($textDecColor, $headerFontSize, 
+                        $pFontSize, $aFontSize){
+         display:flex;
+         width:auto;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         h3{
+             font-family: $fraunces-font;
+             font-size:$headerFontSize;
+             font-weight: $weight-900;
+             margin: 2rem;
+         }
+         p{
+             line-height: 2rem;
+             font-size: $pFontSize;
+             font-family: $barlow-font;
+             color:$neutral-dark-greyish-blue;
+             font-size: $body-font-size;
+             margin: 2rem;    
+         }
+         a{
+             font-family: $fraunces-font;
+             font-size:$aFontSize;
+             text-decoration-color: $textDecColor;
+             text-decoration-thickness: 8px;
+             text-underline-offset: 0rem;
+             text-transform: uppercase;
+             font-weight: $weight-900;
+             letter-spacing: 1px;
+             margin: 2rem;
+         }
+         a:visited{
+             color:#000000;
+         }
+}
+@mixin formatBottomLinks($bodyHeight, $logoHeight, 
+                        $bottomAWidth, $bottomBWidth){
+    display:flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         height:$bodyHeight;
+         background-color: #90D4C5;
+         .bottomLogo{
+             fill: $primary-moderate-cyan;
+             height: $logoHeight;
+         }
+         .bottomA{
+             list-style-type: none;
+             width: $bottomAWidth;
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             padding: 2rem;
+             a{
+                 display: block;  
+                 text-decoration: none;
+                 color: $primary-moderate-cyan;
+                 font-family: $barlow-font;
+                 font-size: 1rem;
+             }
+         }
+         .bottomB{
+            list-style-type: none;
+            width: $bottomBWidth;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            a{
+                display: block;  
+                text-decoration: none;
+                color: $primary-moderate-cyan;
+                font-family: $barlow-font;
+                font-size: 1rem;
+            }
+         }
+}
+@mixin formatGraphicDesignPic($fontsize, $margintopValue){
+        display:flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         h3{
+             font-family: $fraunces-font;
+             font-weight: $weight-900;
+             font-size: $fontsize;
+             color: $primary-dark-desaturated-cyan;
+         }
+         p{
+             margin-top: $margintopValue;
+             font-family: $barlow-font;
+             font-size: $body-font-size;
+             font-weight: $weight-700;
+             color: $primary-dark-blue;
+         }
+}
+@mixin formatGraphicPicText($width, $marginTopValue){
+    width:$width;
+    margin-top: $marginTopValue;
+    text-align: center;
+}
+@mixin desktopFourPic(){
+    .pic1{
+        @include bgImage('./images/desktop/image-gallery-milkbottles.jpg');
+    }
+    .pic2{
+        @include bgImage('./images/desktop/image-gallery-orange.jpg');
+    }
+    .pic3{
+        @include bgImage('./images/desktop/image-gallery-cone.jpg');
+    }
+    .pic4{
+        @include bgImage('./images/desktop/image-gallery-sugarcubes.jpg');
+    }
+}
 
+@mixin mobileFourPic(){
+    .pic1{
+        @include bgImage('./images/mobile/image-gallery-milkbottles.jpg');
+    }
+    .pic2{
+        @include bgImage('./images/mobile/image-gallery-orange.jpg');
+    }
+    .pic3{
+        @include bgImage('./images/mobile/image-gallery-cone.jpg');
+    }
+    .pic4{
+        @include bgImage('./images/mobile/image-gallery-sugar-cubes.jpg');
+    }
+}
+
+
+//*********************************END OF MIXINS
 
 body{
     background-color: $neutral-white;
 }
+
+
+// ********************************MOBILE VIEW
 @media screen and (max-width: 1023px){
     header{
         @include bgImage('./images/mobile/image-header.jpg');
         height:80vh;
     }
     .navSection{
-            height:150px;        
+            height:50px;        
             
         .navHeader{
             padding:2rem;
@@ -38,16 +180,25 @@ body{
         }
         .links{
             list-style-type: none;
-            display:flex;
+            display:none;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            width:75%;
+            width:76%;
             height:300px;
             position: absolute;
-            overflow: hidden;
             left:12%;
             background-color: $neutral-white;
+            position: relative;
+            :before{
+                content: "";
+                position: absolute;
+                top: -30px;
+                right: 0;
+                border-bottom: 40px solid $neutral-white;
+                border-left: 40px solid transparent;
+                
+            }
 
             a{
                 display: block;  
@@ -57,8 +208,7 @@ body{
                 font-family: $barlow-font;
                 letter-spacing: 1px;
                 font-size: 1.1rem;
-                text-shadow: 0 0 1.5px $primary-dark-desaturated-cyan;
-                margin:1rem;
+                margin:1.5rem;
             }
             .contactBtn{
                 background-color: $primary-yellow;
@@ -90,8 +240,8 @@ body{
             word-spacing: 0.5rem;
             font-family: $fraunces-font;
             font-weight: $weight-900;
-            font-size: 3rem;
-            margin: 4rem;
+            font-size: 2.6rem;
+            margin: 3rem;
             text-align: center;
             text-shadow: 0 0 1.5px $primary-dark-desaturated-cyan;
         }
@@ -101,7 +251,327 @@ body{
     }
 }
 
-// DESKTOP VIEW
+// ******************* MOBILE DEVICES
+@media screen and (max-device-width: 540px){
+    header{
+        height: 65vh;
+        @media screen and (max-width:360px){
+            height: 76vh;
+        }
+    }
+    .navSection{
+        .logo{
+            height: 1.5rem;
+        }
+    }
+}
+@media screen and (max-width: 540px){
+    .textBox{
+        display: block;
+        height: auto;
+    }
+    .textBox-row1{
+        height: 115vh;
+        @media screen and (max-width:360px){
+            height: 150vh;
+        }
+        @media screen and (max-width:280px){
+            height: 150vh;
+        }
+        @include formatBoxRow(100%,(45% 55%));
+    }
+    .textSquare1{
+        @include formatTextSquare(hsl(51, 100%, 83%), 2rem, .5rem, .8rem);
+        text-align: center;
+         a:hover{
+             text-decoration-color: $primary-yellow;
+         }
+         grid-row: 2;
+    }
+    .egg{
+        @include bgImage('./images/mobile/image-transform.jpg');
+        height:auto;
+        width:100%;
+    } 
+    .textBox-row2{
+        height: 115vh;
+        @media screen and (max-width:360px){
+            height: 150vh;
+        }
+        @media screen and (max-width:280px){
+            height: 150vh;
+        }
+        @include formatBoxRow(100%,(45% 55%));
+    }
+    .textSquare2{
+        @include formatTextSquare( hsl(5, 100%, 95%), 2rem, .4rem, .8rem);
+        text-align: center;
+         a:hover{
+             text-decoration-color: $primary-soft-red;
+         }
+         grid-row: 2;
+    }
+    .cup{
+        @include bgImage('./images/mobile/image-stand-out.jpg');
+        height:auto;
+        width:100%;
+    }  
+    .textBox-row3{
+        height: 145vh;
+        @media screen and (max-width:360px){
+            height: 180vh;
+        }
+        @media screen and (max-width:280px){
+            height: 170vh;
+        }
+        @include formatBoxRow(auto,(50% 50%));
+     }
+     .cherry{
+         @include bgImage('./images/mobile/image-graphic-design.jpg');
+         height:auto;
+         width:100%;
+         @include formatGraphicDesignPic(1.5rem, 30px);
+     }
+     .cherryText{
+         @include formatGraphicPicText(320px, 300px);
+         @media screen and (max-width:280px){
+            @include formatGraphicPicText(250px, 250px);
+        }
+     }
+     .orange{
+         @include bgImage('./images/mobile/image-photography.jpg');
+         height:auto;
+         width:100%;
+         @include formatGraphicDesignPic(1.5rem, 30px);
+     }
+     .orangeText{
+        @include formatGraphicPicText(320px, 300px);
+        @media screen and (max-width:280px){
+            @include formatGraphicPicText(250px, 250px);
+        }
+     }
+
+     h2{
+        font-family: $fraunces-font;
+        color: $neutral-greyish-blue;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        padding-left: 30px;
+        text-align: center;
+        padding-top: 80px;
+        font-size:1rem;
+    }
+     .clientT{
+         display:flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         height:auto;
+         div{
+             display:flex;
+         }
+
+         div{
+             display:flex;
+             justify-content: center;
+             align-items: center;
+             flex-direction: column
+         }
+         p{
+             line-height: 2rem;
+             font-size: clamp(1rem,1vw,3rem);
+             font-family: $barlow-font;
+             color:$neutral-very-dark-greyish-blue;
+             font-size: $body-font-size;
+             margin: 1rem;    
+             text-align: center;
+             width: 300px;
+             @media screen and (device-width:280px){
+                 width: 275px;
+             }
+         }
+         h5{
+             font-family: $fraunces-font;
+             font-size: $body-font-size;
+             font-weight: $weight-900;
+             margin-bottom: 10px;
+             margin-top: 5px;
+         }
+         h6{
+             font-family: $barlow-font;
+             font-size: .8rem;
+             color:$neutral-greyish-blue;
+         }
+     }
+     @for $x from 1 through 3{
+         .client#{$x} {
+             text-align:center;
+             margin:50px;
+         }
+         .p#{$x}{
+             border-radius: 50%;
+             width:80px;  
+         }
+     }
+
+
+     
+     .pictures{
+         height:40vh;
+         display:grid;
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr 1fr;
+         width: minmax(280px, 540px);
+         @include mobileFourPic(); 
+     }
+ 
+     .bottomLinks{
+         @include formatBottomLinks(250px, 2rem, 320px, 220px);
+         @media screen and (device-width:280px){
+            @include formatBottomLinks(250px, 2rem, 270px, 200px);
+        }
+         height: 280px;
+     }
+     .attribution{
+         background-color: #90D4C5;
+         font-family: $barlow-font;
+         font-size: 3rem;
+     }
+}
+
+//***********Mobile view for Ipad only!!!!
+@media screen and (device-width: 768px){
+    // Main content
+    .textBox{
+        display:block;
+        min-width: 540px;
+        max-width: auto;
+        height: auto;
+     }
+     .textBox-row1{
+         @include formatBoxRow((50% 50%), 500px);
+     }
+     .textSquare1{
+         @include formatTextSquare(hsl(51, 100%, 83%), 1.5rem, .4rem, .8rem);
+         a:hover{
+             text-decoration-color: $primary-yellow;
+         }
+     }
+     .egg{
+         @include bgImage('./images/mobile/image-transform.jpg');
+     }
+     .textBox-row2{
+        @include formatBoxRow((50% 50%), 500px);
+     }
+     .textSquare2{
+        @include formatTextSquare(hsl(51, 100%, 83%), 1.5rem, .4rem, .8rem);
+         a:hover{
+             text-decoration-color: $primary-soft-red;
+         }
+     }
+     .cup{
+         @include bgImage('./images/mobile/image-stand-out.jpg')
+     }
+ 
+     .textBox-row3{
+        @include formatBoxRow((50% 50%), 510px);
+     }
+     .cherry{
+         @include bgImage('./images/mobile/image-graphic-design.jpg');
+         @include formatGraphicDesignPic(1.5rem, 35px);
+     }
+     .cherryText{
+         @include formatGraphicPicText(250px, 250px);
+     }
+     .orange{
+         @include bgImage('./images/mobile/image-photography.jpg');
+         @include formatGraphicDesignPic(1.5rem, 35px);
+     }
+     .orangeText{
+        @include formatGraphicPicText(250px, 250px);
+     }
+
+     h2{
+        font-family: $fraunces-font;
+        color: $neutral-greyish-blue;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        padding-left: 30px;
+        text-align: center;
+        padding-top: 130px;
+        font-size:1.2rem;
+    }
+     .clientT{
+         display:flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: row;
+         height:610px;
+         div{
+             display:flex;
+         }
+
+         div{
+             display:flex;
+             justify-content: center;
+             align-items: center;
+             flex-direction: column
+         }
+         p{
+             line-height: 2rem;
+             font-size: clamp(1rem,1vw,3rem);
+             font-family: $barlow-font;
+             color:$neutral-very-dark-greyish-blue;
+             font-size: $body-font-size;
+             margin: 1rem;    
+             text-align: center;
+         }
+         h5{
+             font-family: $fraunces-font;
+             font-size: $body-font-size;
+             font-weight: $weight-900;
+             margin-bottom: 10px;
+             margin-top: 50px;
+         }
+         h6{
+             font-family: $barlow-font;
+             font-size: 1rem;
+             color:$neutral-greyish-blue;
+         }
+     }
+     @for $x from 1 through 3{
+         .client#{$x} {
+             text-align:center;
+         }
+         .p#{$x}{
+             border-radius: 50%;
+             width:80px;  
+         }
+     }
+
+
+     
+     .pictures{
+         display:grid;
+         grid-template-columns: repeat(4,1fr);
+         height:300px;
+         width: minmax(540px, auto);
+     }
+        @include mobileFourPic();
+ 
+     .bottomLinks{
+         @include formatBottomLinks(250px, 2rem, 400px, 250px);
+     }
+     .attribution{
+         background-color: #90D4C5;
+         font-family: $barlow-font;
+         font-size: 3rem;
+     }
+}
+// ******************************** END OF MOBILE VIEW
+
+
+// ************************************DESKTOP VIEW
 @media screen and (min-width: 1024px) {
 
     .links{
@@ -185,234 +655,143 @@ body{
         padding: 2rem;
     }
     
+}
+@media screen and (min-width: 1024px){
     // Main content
     .textBox{
-       display:block;
-       min-width: 1024;
-       max-width: auto;
-       height: auto;
-    }
-    .textBox-row1{
-        display:grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 700px;
-    }
-    .textSquare1{
-        display:flex;
-        width:auto;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        h3{
-            font-family: $fraunces-font;
-            font-size:2.5rem;
-            font-weight: $weight-900;
-            margin: 2rem;
-        }
-        p{
-            line-height: 2rem;
-            font-size: 1rem;
-            font-family: $barlow-font;
-            color:$neutral-dark-greyish-blue;
-            font-size: $body-font-size;
-            margin: 2rem;    
-        }
-        a{
-            font-family: $fraunces-font;
-            font-size:1rem;
-            text-decoration-color: hsl(51, 100%, 83%);
-            text-decoration-thickness: 8px;
-            text-underline-offset: 0rem;
-            text-transform: uppercase;
-            font-weight: $weight-900;
-            letter-spacing: 1px;
-            margin: 2rem;
-        }
-        a:visited{
-            color:#000000;
-        }
-        a:hover{
-            text-decoration-color: $primary-yellow;
-        }
-    }
-    .egg{
-        @include bgImage('./images/desktop/image-transform.jpg');
-    }
-    .textBox-row2{
-        @extend .textBox-row1;
-    }
-    .textSquare2{
-        @extend .textSquare1;
-        a{
-            text-decoration-color: hsl(5, 100%, 95%);
-        }
-        a:hover{
-            text-decoration-color: $primary-soft-red;
-        }
-    }
-    .cup{
-        @include bgImage('./images/desktop/image-stand-out.jpg')
-    }
+        display:block;
+        min-width: 1024;
+        max-width: auto;
+        height: auto;
+     }
+     .textBox-row1{
+         @include formatBoxRow((50% 50%), 700px);
+     }
+     .textSquare1{
+         @include formatTextSquare(hsl(51, 100%, 83%),2.5rem, 1rem, 1rem);
+         a:hover{
+             text-decoration-color: $primary-yellow;
+         }
+     }
+     .egg{
+         @include bgImage('./images/desktop/image-transform.jpg');
+     }
+     .textBox-row2{
+        @include formatBoxRow((50% 50%), 700px);
+     }
+     .textSquare2{
+        @include formatTextSquare( hsl(5, 100%, 95%) ,2.5rem, 1rem, 1rem);
+         a:hover{
+             text-decoration-color: $primary-soft-red;
+         }
+     }
+     .cup{
+         @include bgImage('./images/desktop/image-stand-out.jpg')
+     }
+ 
+     .textBox-row3{
+        @include formatBoxRow((50% 50%), 700px);
+     }
+     .cherry{
+         @include bgImage('./images/desktop/image-graphic-design.jpg');
+         @include formatGraphicDesignPic(2rem, 35px);
+     }
+     .cherryText{
+         @include formatGraphicPicText(400px, 400px);
+     }
+     .orange{
+         @include bgImage('./images/desktop/image-photography.jpg');
+         @include formatGraphicDesignPic(2rem, 35px);
+     }
+     .orangeText{
+        @include formatGraphicPicText(400px, 400px);
+     }
 
-    .textBox-row3{
-        @extend .textBox-row1
-    }
-    .cherry{
-        @include bgImage('./images/desktop/image-graphic-design.jpg');
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        h3{
-            font-family: $fraunces-font;
-            font-weight: $weight-900;
-            font-size: 2rem;
-            color: $primary-dark-desaturated-cyan;
-        }
-        p{
-            margin-top: 35px;
-            font-family: $barlow-font;
-            font-size: $body-font-size;
-            font-weight: $weight-700;
-            color: $primary-dark-blue;
-        }
-    }
-    .cherryText{
-        width:400px;
-        margin-top: 400px;
+     h2{
+        font-family: $fraunces-font;
+        color: $neutral-greyish-blue;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        padding-left: 50px;
+        grid-area: 1/2/2/3;
         text-align: center;
+        padding-top: 150px;
+        height: 5px;
     }
-    .orange{
-        @include bgImage('./images/desktop/image-photography.jpg');
-        @extend .cherry;
-    }
-    .orangeText{
-        @extend .cherryText;
-    }
-
-    .clientT{
-        display:grid;
-        height:auto;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.2fr .8fr;
-        justify-content: space-between;
-        align-items: center;
-        height:900px;
-        div{
-            display:flex;
-        }
-        h2{
-            font-family: $fraunces-font;
-            color: $neutral-greyish-blue;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            padding-left: 50px;
-            grid-area: 1/2/2/3;
-            text-align: center;
-            padding-top: 130px;
-        }
-        div{
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column
-        }
-        p{
-            line-height: 2rem;
-            font-size: clamp(1rem,1vw,3rem);
-            font-family: $barlow-font;
-            color:$neutral-very-dark-greyish-blue;
-            font-size: $body-font-size;
-            margin: 2rem;    
-        }
-        h5{
-            font-family: $fraunces-font;
-            font-size: $body-font-size;
-            font-weight: $weight-900;
-            margin-bottom: 10px;
-            margin-top: 50px;
-        }
-        h6{
-            font-family: $barlow-font;
-            font-size: 1rem;
-            color:$neutral-greyish-blue;
-        }
-    }
-    @for $x from 1 through 3{
-        .client#{$x} {
-            text-align:center;
-            margin: 4rem;
-            
-            @if $x == 1{
-                grid-area: 2/1/3/2;
-            }
-            @else if $x == 2{
-                grid-area: 2/2/3/3;
-            }
-            @else{
-                grid-area: 2/3/3/4;
-            }
-            
-        }
-        .p#{$x}{
-            border-radius: 50%;
-            width:90px;  
-        }
-    }
-    .pictures{
-        display:grid;
-        grid-template-columns: repeat(4,1fr);
-        height:600px;
-        width: minmax(1024, auto);
-    }
-    .pic1{
-        @include bgImage('./images/desktop/image-gallery-milkbottles.jpg');
-    }
-    .pic2{
-        @include bgImage('./images/desktop/image-gallery-orange.jpg');
-    }
-    .pic3{
-        @include bgImage('./images/desktop/image-gallery-cone.jpg');
-    }
-    .pic4{
-        @include bgImage('./images/desktop/image-gallery-sugarcubes.jpg');
-    }
-
-    .bottomLinks{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height:300px;
-        background-color: #90D4C5;
-        .bottomLogo{
-            fill: $primary-moderate-cyan;
-            height: 2rem;
-        }
-        .bottomA{
-            list-style-type: none;
-            width: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 2rem;
-            a{
-                display: block;  
-                text-decoration: none;
-                color: $primary-moderate-cyan;
-                font-family: $barlow-font;
-                font-size: 1rem;
-            }
-        }
-        .bottomB{
-            @extend .bottomA;
-            width: 250px;
-        }
-    }
-    .attribution{
-        background-color: #90D4C5;
-        font-family: $barlow-font;
-        font-size: 3rem;
-    }
+     .clientT{
+         display:grid;
+         height:auto;
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-template-rows: 0.1fr .7fr;
+         justify-content: space-between;
+         align-items: center;
+         height:700px;
+         padding-bottom: 60px;
+         div{
+             display:flex;
+         }
+         div{
+             display:flex;
+             justify-content: center;
+             align-items: center;
+             flex-direction: column
+         }
+         p{
+             line-height: 2rem;
+             font-size: clamp(1rem,1vw,3rem);
+             font-family: $barlow-font;
+             color:$neutral-very-dark-greyish-blue;
+             font-size: $body-font-size;
+             margin: 2rem;    
+         }
+         h5{
+             font-family: $fraunces-font;
+             font-size: $body-font-size;
+             font-weight: $weight-900;
+             margin-bottom: 10px;
+             margin-top: 50px;
+         }
+         h6{
+             font-family: $barlow-font;
+             font-size: 1rem;
+             color:$neutral-greyish-blue;
+         }
+     }
+     @for $x from 1 through 3{
+         .client#{$x} {
+             text-align:center;
+             margin: 1rem;
+             
+             @if $x == 1{
+                 grid-area: 2/1/3/2;
+             }
+             @else if $x == 2{
+                 grid-area: 2/2/3/3;
+             }
+             @else{
+                 grid-area: 2/3/3/4;
+             }
+             
+         }
+         .p#{$x}{
+             border-radius: 50%;
+             width:90px;  
+         }
+     }
+     .pictures{
+         display:grid;
+         grid-template-columns: repeat(4,1fr);
+         height:600px;
+         width: minmax(1024, auto);
+     }
+        @include desktopFourPic();
+ 
+     .bottomLinks{
+         @include formatBottomLinks(300px, 2rem, 400px, 250px);
+     }
+     .attribution{
+         background-color: #90D4C5;
+         font-family: $barlow-font;
+         font-size: 1rem;
+     }
 }
-

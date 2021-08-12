@@ -198,7 +198,7 @@ body {
     -ms-grid-row: 2;
     grid-row: 2;
   }
-  .textSquare1 h3 {
+  .textSquare1 h1 {
     font-family: "Fraunces";
     font-size: 2rem;
     font-weight: 900;
@@ -282,7 +282,7 @@ body {
     -ms-grid-row: 2;
     grid-row: 2;
   }
-  .textSquare2 h3 {
+  .textSquare2 h1 {
     font-family: "Fraunces";
     font-size: 2rem;
     font-weight: 900;
@@ -368,7 +368,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .cherry h3 {
+  .cherry h1 {
     font-family: "Fraunces";
     font-weight: 900;
     font-size: 1.5rem;
@@ -418,7 +418,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .orange h3 {
+  .orange h1 {
     font-family: "Fraunces";
     font-weight: 900;
     font-size: 1.5rem;
@@ -753,7 +753,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .textSquare1 h3 {
+  .textSquare1 h1 {
     font-family: "Fraunces";
     font-size: 1.5rem;
     font-weight: 900;
@@ -816,7 +816,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .textSquare2 h3 {
+  .textSquare2 h1 {
     font-family: "Fraunces";
     font-size: 1.5rem;
     font-weight: 900;
@@ -882,7 +882,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .cherry h3 {
+  .cherry h1 {
     font-family: "Fraunces";
     font-weight: 900;
     font-size: 1.5rem;
@@ -919,7 +919,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .orange h3 {
+  .orange h1 {
     font-family: "Fraunces";
     font-weight: 900;
     font-size: 1.5rem;
@@ -1266,7 +1266,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .textSquare1 h3 {
+  .textSquare1 h1 {
     font-family: "Fraunces";
     font-size: 2.5rem;
     font-weight: 900;
@@ -1329,7 +1329,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .textSquare2 h3 {
+  .textSquare2 h1 {
     font-family: "Fraunces";
     font-size: 2.5rem;
     font-weight: 900;
@@ -1395,7 +1395,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .cherry h3 {
+  .cherry h1 {
     font-family: "Fraunces";
     font-weight: 900;
     font-size: 2rem;
@@ -1432,7 +1432,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .orange h3 {
+  .orange h1 {
     font-family: "Fraunces";
     font-weight: 900;
     font-size: 2rem;
